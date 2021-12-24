@@ -47,7 +47,6 @@ def send_voice(message,rownum):
 def check_answer(message):
     # Если функция возвращает None -> Человек не в игре
     answer = utils.get_answer_for_user(message.chat.id)
-    print(answer)
     # Как Вы помните, answer может быть либо текст, либо None
     # Если None:
     if not answer:
@@ -61,7 +60,7 @@ def check_answer(message):
         else:
             bot.send_message(message.chat.id, 'Увы, Вы не угадали. Попробуйте ещё раз!', reply_markup=keyboard_hider)
         # Удаляем юзера из хранилища (игра закончена)
-        utils.finish_user_game(message.chat.id)
+        #utils.finish_user_game(message.chat.id)
 
 
 if __name__ == '__main__':

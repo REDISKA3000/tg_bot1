@@ -34,15 +34,16 @@ def set_user_game(chat_id, estimated_answer):
     """
     with shelve.open(shelve_name) as storage:
         storage[str(chat_id)] = estimated_answer
+        print(storage)
 
 
-def finish_user_game(chat_id):
-    """
-    Заканчиваем игру текущего пользователя и удаляем правильный ответ из хранилища
-    :param chat_id: id юзера
-    """
-    with shelve.open(shelve_name) as storage:
-        del storage[str(chat_id)]
+# def finish_user_game(chat_id):
+#    """
+#   Заканчиваем игру текущего пользователя и удаляем правильный ответ из хранилища
+#  :param chat_id: id юзера
+# """
+# with shelve.open(shelve_name) as storage:
+#   del storage[str(chat_id)]
 
 
 def get_answer_for_user(chat_id):
